@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="show">
+<p>
+  <strong>Orderno:</strong>
+  <%= @purchaseorder.orderno %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @purchaseorder.supplier %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @purchaseorder.description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @purchaseorder.cost %>
+</p>
+
+<%= link_to 'Edit', edit_purchaseorder_path(@purchaseorder) %> |
+<%= link_to 'Back', purchaseorders_path %>
+</div>

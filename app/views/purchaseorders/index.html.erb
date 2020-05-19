@@ -1,0 +1,42 @@
+<div class="centre">
+
+<p id="notice"><%= notice %></p>
+
+<%= image_tag("AdvoPO.png", alt: "Site Logo") %>
+
+<h1>Welcome to AdvoPO Purchase Orders</h1>
+
+<p>AdvoPO is a purchase ordering system specifically tailored for advertising companies. We help you stay on top of all invoices coming in and out.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Orderno</th>
+      <th>Supplier</th>
+      <th>Description</th>
+      <th>Cost</th>
+      <th colspan="3"></th>
+    </tr>
+    <br>
+  </thead>
+
+  <tbody>
+    <% @purchaseorders.each do |purchaseorder| %>
+      <tr>
+        <td><%= purchaseorder.orderno %></td>
+        <td><%= purchaseorder.supplier %></td>
+        <td><%= purchaseorder.description %></td>
+        <td><%= purchaseorder.cost %></td>
+        <br>
+        <td><%= link_to 'Show', purchaseorder %></td>
+        <td><%= link_to 'Edit', edit_purchaseorder_path(purchaseorder) %></td>
+        <td><%= link_to 'Destroy', purchaseorder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchaseorder', new_purchaseorder_path %>
+</div>

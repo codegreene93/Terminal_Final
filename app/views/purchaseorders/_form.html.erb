@@ -1,0 +1,40 @@
+
+ <%= image_tag("AdvoPO.png", alt: "Site Logo") %>
+<%= form_for(purchaseorder) do |f| %>
+  <% if purchaseorder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(purchaseorder.errors.count, "error") %> prohibited this purchaseorder from being saved:</h2>
+
+      <ul>
+      <% purchaseorder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orderno %>
+    <%= f.number_field :orderno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supplier %>
+    <%= f.text_field :supplier %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.number_field :cost %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
